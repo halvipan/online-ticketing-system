@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Booking
+comment1.params=showToSet\ seatsToSet
+comment1.target=Booking(Show,\ java.util.ArrayList)
+comment2.params=
+comment2.target=Show\ getShow()
+comment3.params=
+comment3.target=java.util.ArrayList\ getSeats()
+numComments=4

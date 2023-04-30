@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=VenueManagerUser
+comment1.params=username\ password
+comment1.target=VenueManagerUser(java.lang.String,\ java.lang.String)
+numComments=2

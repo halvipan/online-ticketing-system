@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Seat
+comment1.params=numberToSet
+comment1.target=Seat(java.lang.Integer)
+comment2.params=
+comment2.target=java.lang.Integer\ getNumber()
+comment3.params=
+comment3.target=java.lang.Boolean\ getReserved()
+comment4.params=state
+comment4.target=void\ setReserved(java.lang.Boolean)
+numComments=5

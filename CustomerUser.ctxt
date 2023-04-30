@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=CustomerUser
+comment1.params=username\ password
+comment1.target=CustomerUser(java.lang.String,\ java.lang.String)
+comment2.params=booking
+comment2.target=void\ addBooking(Booking)
+comment3.params=
+comment3.target=java.util.ArrayList\ getBookings()
+numComments=4
