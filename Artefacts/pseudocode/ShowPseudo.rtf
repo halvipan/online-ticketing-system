@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CLASS Show\
+\
+    ATTRIBUTE name\
+    ATTRIBUTE seats\
+    ATTRIBUTE max seats\
+\
+    \
+    METHOD Constructor WITH name, number of seats and maxseats PARAM\
+        SET name ATTRIBUTE to name PARAM\
+        SET seats ATTRIBUTE to empty list\
+        call METHOD createSeats WITH number of seats PARAM\
+        SET max seats ATTRIBUTE to max seats PARAM\
+\
+    \
+    OVERRIDE\
+    METHOD toString\
+        RETURN name ATTRIBUTE\
+\
+\
+    METHOD getSeats\
+        RETURN seats ATTRIBUTE\
+\
+\
+    METHOD getUnreservedSeats\
+        CREATE list\
+        FOR seat IN seats ATTRIBUTE\
+		  IF seat\'92s METHOD getReserved EQUALS FALSE\
+                ADD the seat to the list\
+        RETURN list\
+\
+\
+    METHOD getMaxSeatsPerPerson\
+        RETURN maxseats ATTRIBUTE\
+\
+    \
+    METHOD createSeats WITH number of seats PARAM\
+        WHILE number is LESS THAN number of seats PARAM +1\
+            CREATE new Seat WITH number and ADD to seats ATTRIBUTE\
+}

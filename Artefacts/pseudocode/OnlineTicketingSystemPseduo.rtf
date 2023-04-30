@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15500\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CLASS OnlineTicketingSystem\
+\
+    ATTRIBUTE frame\
+    ATTRIBUTE users\
+    ATTRIBUTE user\
+    ATTRIBUTE shows\
+\
+\
+    METHOD Constructor\
+        call METHOD makeFrame\
+        call METHOD setLoginPanel\
+        SET shows ATTRIBUTE to empty list\
+        call METHOD createShows\
+        SET users ATTRIBUTE to empty list\
+        call METHOD createUsers\
+\
+    \
+    METHOD login WITH PARAM username and password\
+	   FOR user IN users ATTRIBUTE\
+            IF user\'92s username EQUALS username PARAM\
+                IF call user\'92s METHOD validatePassword WITH password PARAM EQUALS TRUE\
+                    SET user ATTRIBUTE to user\
+                    SET frame to main view\
+                    BREAK FOR loop\
+\
+    \
+    METHOD createShows\
+        CREATE several new Show objects and add it to the shows ATTRIBUTE\
+\
+    \
+    METHOD createUsers\
+        CREATE several new User objects and add it to the users ATTRIBUTE WITH shows\
+\
+\
+    METHOD makeFrame\
+        CREATE the frame\
+        SET the frame ATTRIBUTE to frame\
+\
+\
+    METHOD setLoginPanel\
+        CREATE the panel\
+        CREATE the username input AND add to the panel\
+        CREATE the password input AND add to the panel\
+        CREATE the login button AND add to the panel\
+        SET the panel to the frame\
+\
+    \
+    METHOD setMainPanel\
+        CREATE the panel\
+        ADD the Shows List Panel to the panel\
+        IF user ATTRIBUTE is INSTANCEOF CustomerUser\
+            ADD the Create Booking Panel to the panel\
+            ADD the Booking List Panel to the panel\
+        \
+        IF user ATTRIBUTE is INSTANCEOF VenueManagerUser\
+            ADD the Create Show Panel to the panel\
+        \
+        SET the panel to the frame\
+\
+    \
+    METHOD getShowsPanel\
+        CREATE the panel\
+        CREATE the list\
+        FOR show IN shows\
+            ADD to list the show\'92s name\
+\
+        ADD list to the panel\
+        RETURN the panel\
+\
+\
+    METHOD getCreateShowPanel\
+        CREATE the panel\
+        CREATE the name input AND add to the panel\
+        CREATE the number of seats input AND add to the panel\
+	   CREATE the max seats per person input AND add to the panel\
+        CREATE the Create Show button AND add to the panel\
+        RETURN the panel\
+\
+\
+    METHOD getBookingsPanel WITH user PARAM\
+        CREATE the panel\
+        CREATE the list\
+        FOR booking IN PARAM user\'92s bookings\
+		  CREATE the string\
+            ADD the booking\'92s show\'92s name to the string\
+\
+		  FOR seats IN booking\'92s seats\
+                ADD the seat\'92s number to the string\
+\
+		  ADD the string to the list\
+\
+        ADD list to the panel\
+        RETURN the panel\
+\
+    \
+    METHOD getCreateBookingPanel\
+        CREATE the panel\
+        CREATE the show input AND add to the panel\
+        CREATE the seats input AND add to the panel\
+        CREATE the Create Booking button AND add to the panel\
+        RETURN the panel\
+}
